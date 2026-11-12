@@ -1,0 +1,35 @@
+{
+  "name": "Arctic Bear #3505",
+  "description": "Arctic Bear \u2014 5,555 realistic polar bear portraits on BNB Chain. Mint #1 free per wallet, then 0.0004 BNB. Only .ai Agent ID holders can mint. Forge 2 bears into 1 Legendary.",
+  "image": "https://arcticbear.vercel.app/images/spaceman.webp",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Spaceman"
+    },
+    {
+      "trait_type": "Grade",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Helmet + Suit"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Deep Space"
+    },
+    {
+      "trait_type": "Light",
+      "value": "Starlight"
+    },
+    {
+      "trait_type": "Aura",
+      "value": "Cosmic"
+    },
+    {
+      "trait_type": "Frame",
+      "value": "Steel"
+    }
+  ]
+}
