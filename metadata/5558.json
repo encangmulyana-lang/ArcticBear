@@ -1,0 +1,35 @@
+{
+  "name": "Arctic Bear #5558",
+  "description": "Arctic Bear Legendary \u2014 forged by burning 2 Arctic Bears. Only 4 Legendary kinds exist: Ice King, Cosmic, Diamond, Aurora.",
+  "image": "https://arcticbear.vercel.app/images/diamond.webp",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Diamond"
+    },
+    {
+      "trait_type": "Grade",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Aurora Sky"
+    },
+    {
+      "trait_type": "Light",
+      "value": "Legendary Glow"
+    },
+    {
+      "trait_type": "Aura",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Frame",
+      "value": "Gold"
+    }
+  ]
+}
