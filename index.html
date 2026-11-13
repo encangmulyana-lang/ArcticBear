@@ -759,16 +759,22 @@ function filterBears(g, btn){
   document.querySelectorAll("#bears .grid .card").forEach(function(c){ c.style.display=(g==="all"||c.getAttribute("data-grade")===g)?"":"none"; });
   document.querySelectorAll(".filterbtn").forEach(function(b){ b.classList.toggle("on", b===btn); });
 }
+var heroIdx=0, heroTimer=null;
+function heroNext(){ var n=document.querySelectorAll(".herodot").length||4; heroIdx=(heroIdx+1)%n; heroSwap(heroIdx); }
+function heroStart(){ if(!heroTimer) heroTimer=setInterval(heroNext,4000); }
+function heroStop(){ if(heroTimer){ clearInterval(heroTimer); heroTimer=null; } }
 function heroSwap(i){
   var cards=document.querySelectorAll("#forge .grid .card");
   if(!cards.length) return;
   i=((i%cards.length)+cards.length)%cards.length;
+  heroIdx=i;
   var img=cards[i].querySelector("img"), nm=cards[i].querySelector("h3"), sub=cards[i].querySelector("p");
   var hp=document.getElementById("heroPortrait"); if(hp&&img) hp.src=img.src;
   var hn=document.getElementById("heroCapName"); if(hn&&nm) hn.textContent=nm.textContent;
   var hs=document.getElementById("heroCapSub"); if(hs&&sub) hs.textContent=sub.textContent;
   document.querySelectorAll(".herodot").forEach(function(d,di){ d.classList.toggle("on",di===i); });
 }
+(function(){ var hc=document.querySelector(".herocard"); if(hc){ hc.addEventListener("mouseenter",heroStop); hc.addEventListener("mouseleave",heroStart); hc.addEventListener("touchstart",heroStop,{passive:true}); hc.addEventListener("touchend",function(){ setTimeout(heroStart,6000); },{passive:true}); } document.addEventListener("visibilitychange",function(){ if(document.hidden) heroStop(); else heroStart(); }); heroStart(); })();
 function toggleMenu(){ document.getElementById("drawer").classList.toggle("open"); document.getElementById("scrim").classList.toggle("on"); document.getElementById("burgerBtn").classList.toggle("open"); document.body.style.overflow=document.getElementById("drawer").classList.contains("open")?"hidden":""; }
 window.addEventListener("scroll",function(){ var nav=document.querySelector("nav"); if(nav) nav.classList.toggle("scrolled",window.scrollY>10); var cta=document.getElementById("mobileCta"); if(!cta) return; cta.classList.toggle("show",window.scrollY>560&&window.innerWidth<=768); },{passive:true});
 </script></body></html>
